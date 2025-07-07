@@ -45,13 +45,19 @@ public class Delivery {
     public static void startDelivery(OrderPlaced orderPlaced) {
         //implement business logic here:
 
-        /** Example 1:  new item 
         Delivery delivery = new Delivery();
+
+        delivery.setCustomerid(orderPlaced.getCustomerid());
+        delivery.setAddress(orderPlaced.getAddress());
+        delivery.setOrderid(String.valueOf(orderPlaced.getId()));
+        delivery.setProductid(orderPlaced.getProductid());
+        delivery.setQty(orderPlaced.getQty());
+        delivery.setStatus("DELIVERY READY");
+
         repository().save(delivery);
 
         DeliveryStarted deliveryStarted = new DeliveryStarted(delivery);
         deliveryStarted.publishAfterCommit();
-        */
 
         /** Example 2:  finding and process
         
